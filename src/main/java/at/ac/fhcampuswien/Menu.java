@@ -6,7 +6,7 @@ public class Menu {
     private static final String INVALID_INPUT_MESSAGE = "Invalid input !";
     private static final String EXIT_MESSAGE = "Bye Bye";
 
-
+    
         private static void printMenu() {
             System.out.println("*****************************");
             System.out.println("*  Welcome to NewsApp    *   ");
