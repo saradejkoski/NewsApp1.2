@@ -8,9 +8,14 @@ public class AppController {
     private List<Article> articles;
 
     public AppController() {
+    }
 
-        private static List<Article> generateMockList() {
-            List<Article> articles = new ArrayList<>();
-            articles.add(1,"Titel");
-        }
+    private static List<Article> generateMockList() { // List filled with dummies
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Goethe", "Faust"));
+        articles.add(new Article("Shakespeare", "Hamlet"));
+        articles.add(new Article("Dummy", "From Dummies For Dummies"));
+        return articles;
+    }
+
 }
