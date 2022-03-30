@@ -69,7 +69,7 @@ public class AppControllerTest {
         List<Article> bitcoinNewsList = ctrl.getAllNewsBitcoin();
         boolean containsBitcoin = true;
         for (Article article : bitcoinNewsList) {
-            if (!article.getTitle().contains("Bitcoin")) {
+            if (!article.getTitle().toLowerCase().contains("bitcoin")) {
                 containsBitcoin = false;
             }
         }
