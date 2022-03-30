@@ -30,10 +30,12 @@ public class AppControllerTest {
     }
 
     @Test
-    @DisplayName("test if articleCount returns zero when null")
-    public void testIfArticleCountIsZeroWhenArticlesNull() {
-        Assertions.assertEquals(ctrl.getArticleCount(), 0);
+    @DisplayName("test if articleCount returns 3 when asking for article count")
+    public void testIfArticleCountIs3WhenArticlesNull() {
+        Assertions.assertEquals(ctrl.getArticleCount(), 3);
     }
+
+    //testIfArticleCountIsZeroWhenArticlesNull
 
     @Test
     @DisplayName("test if getTopHeadlinesAustria returns empty list when null")

@@ -23,7 +23,7 @@ public class AppController {
     }
 
     public int getArticleCount() {
-        if (articles.isEmpty()) {
+        if (articles == null) {
             return 0;
         } else {
             return articles.size();
@@ -31,7 +31,7 @@ public class AppController {
     }
 
     public List<Article> getTopHeadlinesAustria() {
-        if (articles.equals(null)) {
+        if (articles == null) {
             return new ArrayList();
         } else {
             return articles;
