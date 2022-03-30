@@ -31,10 +31,10 @@ public class AppController {
     }
 
     public List<Article> getTopHeadlinesAustria() {
-        if (articles == null) {
-            return new ArrayList();
-        } else {
+        if (articles != null) {
             return articles;
+        } else {
+            return new ArrayList();
         }
     }
 

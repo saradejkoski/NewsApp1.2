@@ -31,17 +31,19 @@ public class AppControllerTest {
 
     @Test
     @DisplayName("test if articleCount returns 3 when asking for article count")
-    public void testIfArticleCountIs3WhenArticlesNull() {
+    public void testIfArticleCountIs3() {
         Assertions.assertEquals(ctrl.getArticleCount(), 3);
     }
 
     //testIfArticleCountIsZeroWhenArticlesNull
 
     @Test
-    @DisplayName("test if getTopHeadlinesAustria returns empty list when null")
-    public void testIfGetTopHeadlinesAustriaIsEmptyWhenListNull() {
-        Assertions.assertTrue(ctrl.getTopHeadlinesAustria().isEmpty());
+    @DisplayName("test if getTopHeadlinesAustria returns empty list when is not null")
+    public void testIfGetTopHeadlinesAustriaisNotNull() {
+        Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
+
+    //testIfGetTopHeadlinesAustriaIsEmptyWhenListNull
 
     @Test
     @DisplayName("test if filter list contains searched element")
@@ -67,7 +69,7 @@ public class AppControllerTest {
         List<Article> bitcoinNewsList = ctrl.getAllNewsBitcoin();
         boolean containsBitcoin = true;
         for (Article article : bitcoinNewsList) {
-            if (!article.getTitle().contains("bitcoin")) {
+            if (!article.getTitle().contains("Bitcoin")) {
                 containsBitcoin = false;
             }
         }
