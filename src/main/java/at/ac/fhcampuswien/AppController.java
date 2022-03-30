@@ -18,4 +18,40 @@ public class AppController {
         return articles;
     }
 
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public int getArticleCount() {
+        if (articles.isEmpty()) {
+            return 0;
+        } else {
+            return articles.size();
+        }
+    }
+
+    public List<Article> getTopHeadlinesAustria() {
+        if (articles.equals(null)) {
+            return new ArrayList();
+        } else {
+            return articles;
+        }
+    }
+
+    protected List<Article> filterList(String query, List<Article> articles) {
+
+        List<Article> filteredArticles = new ArrayList<>();
+
+        for (int i = 0; i < articles.size(); i++) {
+            if (articles.get(i).getTitle().toLowerCase().contains(query.toLowerCase())) {
+                filteredArticles.add(articles.get(i));
+            }
+        }
+        return filteredArticles;
+    }
+
+    public List<Article> getAllNewsBitcoin () {
+        return filterList("bitcoin", articles);
+    }
 }
+

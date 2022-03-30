@@ -59,7 +59,7 @@ public class AppControllerTest {
         List<Article> articles = new ArrayList<>();
         articles.add(new Article("Goethe", "Faust"));
         articles.add(new Article("Shakespeare", "Hamlet"));
-        articles.add(new Article("Nobody", "From Bitcoiners For Bitcoiners"));
+        articles.add(new Article("Nobody", "Bitcoin"));
         ctrl.setArticles(articles);
         // test getAllNewsBitcoin functionality
         List<Article> bitcoinNewsList = ctrl.getAllNewsBitcoin();
