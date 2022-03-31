@@ -34,7 +34,7 @@ public class AppController {
         if (articles != null) {
             return articles;
         } else {
-            return new ArrayList();
+            return new ArrayList<>();
         }
     }
 
