@@ -1,7 +1,6 @@
 package at.ac.fhcampuswien;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class AppController {
@@ -12,11 +11,11 @@ public class AppController {
     }
 
     private static List<Article> generateMockList() { // List filled with dummies
-    List<Article> articles = new ArrayList<>();
-    //articles.add(new Article("Goethe", "Faust"));
-    //articles.add(new Article("Shakespeare", "Hamlet"));
-    //articles.add(new Article("Dummy", "From Dummies For Dummies"));
-    return articles;
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Goethe", "Faust"));
+        articles.add(new Article("Shakespeare", "Hamlet"));
+        articles.add(new Article("Dummy", "From Dummies For Dummies"));
+        return articles;
     }
 
     public void setArticles(List<Article> articles) {
@@ -32,10 +31,10 @@ public class AppController {
     }
 
     public List<Article> getTopHeadlinesAustria() {
-        if(articles != null) {
+        if (articles != null) {
             return articles;
         } else {
-            return new ArrayList<>();
+            return new ArrayList();
         }
     }
 

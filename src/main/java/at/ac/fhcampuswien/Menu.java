@@ -15,11 +15,11 @@ public class Menu {
     }
 
     private void getArticleCount(AppController ctrl) {
-
+        ctrl.getArticleCount();
     }
 
     private void getTopHeadlinesAustria(AppController ctrl) {
-
+        ctrl.getTopHeadlinesAustria();
     }
 
     private void getAllNewsBitcoin(AppController ctrl) {
