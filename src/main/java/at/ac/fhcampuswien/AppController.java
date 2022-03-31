@@ -23,12 +23,13 @@ public class AppController {
     }
 
     public int getArticleCount() {
-        if (articles == null) {
-            return 0;
-        } else {
+        if (articles != null) {
             return articles.size();
+        } else {
+            return 0;
         }
     }
+
 
     public List<Article> getTopHeadlinesAustria() {
         if (articles != null) {
