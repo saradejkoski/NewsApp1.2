@@ -36,11 +36,19 @@ public class AppControllerTest {
     }
 
     //testIfArticleCountIsZeroWhenArticlesNull
+    @Test
+    @DisplayName("test if ArticleCount is zero when articles are null")
+    public void testIfArticleCountIsZeroWhenArticlesNull(){
+        AppController appController = new AppController();
+        appController.setArticles(null);
+
+        Assertions.assertEquals(0, appController.getArticleCount());
+    }
 
     @Test
-    @DisplayName("test if getTopHeadlinesAustria returns empty list when null")
-    public void testIfGetTopHeadlinesAustriaIsEmptyWhenListNull() {
-        Assertions.assertTrue(ctrl.getTopHeadlinesAustria().isEmpty());
+    @DisplayName("test if getTopHeadlinesAustria returns empty list when is not null")
+    public void testIfGetTopHeadlinesAustriaIsEmptyWhenListIsNotNull() {
+        Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
 
     @Test
@@ -67,7 +75,7 @@ public class AppControllerTest {
         List<Article> bitcoinNewsList = ctrl.getAllNewsBitcoin();
         boolean containsBitcoin = true;
         for (Article article : bitcoinNewsList) {
-            if (!article.getTitle().contains("bitcoin")) {
+            if (!article.getTitle().toLowerCase().contains("bitcoin")) {
                 containsBitcoin = false;
             }
         }
