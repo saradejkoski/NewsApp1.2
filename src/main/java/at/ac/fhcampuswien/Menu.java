@@ -1,29 +1,62 @@
 package at.ac.fhcampuswien;
 
+import java.sql.SQLOutput;
+import java.util.DoubleSummaryStatistics;
+import java.util.Scanner;
+
 public class Menu {
 
-    private AppController controller;
+    private AppController controller = new AppController();
     private static final String INVALID_INPUT_MESSAGE = "Invalid input !";
     private static final String EXIT_MESSAGE = "Bye Bye";
 
+
+    // prints Menu and lets you put in your option
     public void start() {
-        Menu.printMenu();
+
+        Scanner scan = new Scanner(System.in);
+        printMenu();
+
+        //String input = scan.next();
+        handleInputString(scan.next());
     }
+
+    Scanner scanner = new Scanner(System.in);
+
 
     private void handleInputString(String input) {
-        throw new UnsupportedOperationException("Not implemented yet!");
+
+        switch (input) {
+
+            case "a":
+                getTopHeadlinesAustria(controller);
+                break;
+            case "b":
+                getAllNewsBitcoin(controller);
+                break;
+            case "y":
+                getArticleCount(controller);
+                break;
+            case "q":
+                printExitMessage();
+                break;
+            default:
+                printInvalidInputMessage();
+        }
     }
 
+
     private void getArticleCount(AppController ctrl) {
-        ctrl.getArticleCount();
+        System.out.println(controller.getArticleCount());
+
     }
 
     private void getTopHeadlinesAustria(AppController ctrl) {
-        ctrl.getTopHeadlinesAustria();
+        System.out.println(controller.getTopHeadlinesAustria().toString());
     }
 
     private void getAllNewsBitcoin(AppController ctrl) {
-
+        System.out.println(controller.getAllNewsBitcoin().toString());
     }
 
     private static void printMenu() {

@@ -32,28 +32,31 @@ public class AppControllerTest {
     @Test
     @DisplayName("test if articleCount returns 3 when asking for article count")
     public void testIfArticleCountIs3() {
-        Assertions.assertEquals(ctrl.getArticleCount(), 3);
+        Assertions.assertEquals(3,ctrl.getArticleCount(),3);
     }
-
-    //testIfArticleCountIsZeroWhenArticlesNull
 
     @Test
     @DisplayName("test if ArticleCount is zero when articles are null")
     public void testIfArticleCountIsZeroWhenArticlesNull(){
-        AppController appController = new AppController();
-        appController.setArticles(null);
+        ctrl.setArticles(null);
 
-        Assertions.assertEquals(0, appController.getArticleCount());
+        Assertions.assertEquals(0, ctrl.getArticleCount());
+    }
+
+    @Test
+    @DisplayName("test if getTopHeadlinesAustria returns empty list when is not null")
+    public void testIfGetTopHeadlinesAustriaIsNotNull() {
+        Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
 
 
     @Test
-    @DisplayName("test if getTopHeadlinesAustria returns empty list when is not null")
-    public void testIfGetTopHeadlinesAustriaisNotNull() {
-        Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
-    }
+    @DisplayName("test if GetTopHeadlinesAustria is empty when List Null")
+    public void testIfGetTopHeadlinesAustriaIsEmptyWhenListNull(){
+        ctrl.setArticles(null);
 
-    //testIfGetTopHeadlinesAustriaIsEmptyWhenListNull
+        Assertions.assertEquals(0, ctrl.getTopHeadlinesAustria().size(),0);
+    }
 
     @Test
     @DisplayName("test if filter list contains searched element")
