@@ -1,7 +1,5 @@
 package at.ac.fhcampuswien;
 
-import java.sql.SQLOutput;
-import java.util.DoubleSummaryStatistics;
 import java.util.Scanner;
 
 public class Menu {
@@ -11,17 +9,21 @@ public class Menu {
     private static final String EXIT_MESSAGE = "Bye Bye";
 
 
-    // prints Menu and lets you put in your option
     public void start() {
+        printMenu();                               // printed das Menu
+        Scanner scan = new Scanner(System.in);     // initialisiert scanner
+        String input = scan.nextLine();            // wartet auf den input
 
-        Scanner scan = new Scanner(System.in);
-        printMenu();
-
-        //String input = scan.next();
-        handleInputString(scan.next());
+        while (true) {                             // Endlosschleife
+            if (input.equals("q")){                // checkt ob input q ist
+                handleInputString(input);          // führt case für q aus
+                break;                             // beendet die Endlosschleife
+            }
+            handleInputString(input);              // führt case für alles aus, was nicht q ist, bsp: a
+            start();                               // führt die startmethode erneut aus (rekursion) --> Menu wird wieder geprinted
+            break;                                 // beendet die Endlosschleife
+        }
     }
-
-    Scanner scanner = new Scanner(System.in);
 
 
     private void handleInputString(String input) {
@@ -45,10 +47,8 @@ public class Menu {
         }
     }
 
-
     private void getArticleCount(AppController ctrl) {
         System.out.println(controller.getArticleCount());
-
     }
 
     private void getTopHeadlinesAustria(AppController ctrl) {
@@ -77,5 +77,4 @@ public class Menu {
     private static void printExitMessage() {
         System.out.println(EXIT_MESSAGE);
     }
-
 }
