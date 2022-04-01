@@ -49,7 +49,6 @@ public class AppControllerTest {
         Assertions.assertFalse(ctrl.getTopHeadlinesAustria().isEmpty());
     }
 
-
     @Test
     @DisplayName("test if GetTopHeadlinesAustria is empty when List Null")
     public void testIfGetTopHeadlinesAustriaIsEmptyWhenListNull(){

@@ -36,7 +36,6 @@ public class AppController {
         }
     }
 
-
     public List<Article> getTopHeadlinesAustria() {
         List<Article> articles = new ArrayList<>();
         articles.add(new Article("Goethe", "Faust"));
