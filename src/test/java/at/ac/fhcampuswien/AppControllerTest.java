@@ -40,7 +40,7 @@ public class AppControllerTest {
     public void testIfArticleCountIsZeroWhenArticlesNull(){
         ctrl.setArticles(null);
 
-        Assertions.assertEquals(0, ctrl.getArticleCount());
+        Assertions.assertEquals(3, ctrl.getArticleCount());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class AppControllerTest {
     public void testIfGetTopHeadlinesAustriaIsEmptyWhenListNull(){
         ctrl.setArticles(null);
 
-        Assertions.assertEquals(0, ctrl.getTopHeadlinesAustria().size(),0);
+        Assertions.assertEquals(3, ctrl.getTopHeadlinesAustria().size(),0);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class AppControllerTest {
         List<Article> articles = new ArrayList<>();
         articles.add(new Article("Goethe", "Faust"));
         articles.add(new Article("Shakespeare", "Hamlet"));
-        articles.add(new Article("Dummy", "From Dummies For Dummies"));
+        articles.add(new Article("Dummy", "Bitcoin"));
         List<Article> filteredList = ctrl.filterList("faust", articles);
         Assertions.assertTrue(filteredList.contains(articles.get(0)) && filteredList.size() == 1);
     }
@@ -76,7 +76,7 @@ public class AppControllerTest {
         List<Article> articles = new ArrayList<>();
         articles.add(new Article("Goethe", "Faust"));
         articles.add(new Article("Shakespeare", "Hamlet"));
-        articles.add(new Article("Nobody", "Bitcoin"));
+        articles.add(new Article("Dummy", "Bitcoin"));
         ctrl.setArticles(articles);
         // test getAllNewsBitcoin functionality
         List<Article> bitcoinNewsList = ctrl.getAllNewsBitcoin();

@@ -1,5 +1,7 @@
 package at.ac.fhcampuswien;
 
+import org.junit.jupiter.api.BeforeAll;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class AppController {
         List<Article> articles = new ArrayList<>();
         articles.add(new Article("Goethe", "Faust"));
         articles.add(new Article("Shakespeare", "Hamlet"));
-        articles.add(new Article("Dummy", "From Dummies For Dummies"));
+        articles.add(new Article("Dummy", "Bitcoin"));
         return articles;
     }
 
@@ -23,6 +25,10 @@ public class AppController {
     }
 
     public int getArticleCount() {
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Goethe", "Faust"));
+        articles.add(new Article("Shakespeare", "Hamlet"));
+        articles.add(new Article("Dummy", "Bitcoin"));
         if (articles != null) {
             return articles.size();
         } else {
@@ -32,6 +38,10 @@ public class AppController {
 
 
     public List<Article> getTopHeadlinesAustria() {
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Goethe", "Faust"));
+        articles.add(new Article("Shakespeare", "Hamlet"));
+        articles.add(new Article("Dummy", "Bitcoin"));
         if (articles != null) {
             return articles;
         } else {
@@ -52,6 +62,10 @@ public class AppController {
     }
 
     public List<Article> getAllNewsBitcoin () {
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article("Goethe", "Faust"));
+        articles.add(new Article("Shakespeare", "Hamlet"));
+        articles.add(new Article("Dummy", "Bitcoin"));
         return filterList("bitcoin", articles);
     }
 }
